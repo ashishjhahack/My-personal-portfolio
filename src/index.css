@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+
+@layer utilities{
+    .gradient{      /* Giving name to the css class */
+        background: linear-gradient(-45deg, #302b63, #00bf8f, #1cd8d2);
+    }
+}
