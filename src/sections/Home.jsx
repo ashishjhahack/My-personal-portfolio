@@ -1,15 +1,26 @@
 import React, {useEffect, useState, useMemo } from 'react'
 import ParticlesBackground from '../components/ParticlesBackground'
-import { motion } from 'framer-motion'
+import { motion, scale } from 'framer-motion'
 import { FaXTwitter, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa6'
+import avatar from '../assets/avator.png'
 
 
 const socials = [
-  { Icon: FaXTwitter, link: 'https://twitter.com/yourprofile' },
-  { Icon: FaLinkedin, link: 'https://linkedin.com/in/ashish-jha-41227234b' },
-  { Icon: FaGithub, link: 'https://github.com/ashishjhahack' },
-  { Icon: FaInstagram, link: 'https://instagram.com/ashish.j5_04' }
+  { Icon: FaXTwitter, label: 'X', href: 'https://twitter.com/yourprofile' },
+  { Icon: FaLinkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/ashish-jha-41227234b' },
+  { Icon: FaGithub, label: 'GitHub', href: 'https://github.com/ashishjhahack' },
+  { Icon: FaInstagram, label: 'Instagram', href: 'https://instagram.com/ashish.j5_04' }
 ]
+
+const glowVariants = {
+  initial: {scale: 1, y:0, filter: "drop-shadow(0 0 0 rgba(0, 0, 0, 0))"},
+  hover: {
+    scale: 1.2, y:-3,
+    filter: "drop-shadow(0 0 8px rgba(13, 88, 204, 0.9)) drop-shadow(0 0 18px rgba(16, 185, 129, 0.8))", 
+    transition: {type: 'spring', stiffness: 300, damping: 15}
+  },
+  tap: {scale: 0.9, y:0, transition: {duration: 0.08}}
+}
 
 const Home = () => {
 
@@ -41,7 +52,7 @@ const Home = () => {
   }, [subIndex, index, deleting, roles]);
 
   return (
-    <section id='home' className='w-full h-screen relative bg-black overflow-hidden'>
+    <section id='home' className='w-full h-screen relative bg-black overflow-hidden pt-20'>
       <ParticlesBackground />
 
       {/* background animation  */}
@@ -109,10 +120,41 @@ const Home = () => {
               className='px-6 py-3 rounded-full text-lg font-medium text-black bg-white hover:bg-gray-200 shadow-lg hover:scale-105 transition-all'>My Resume</a>
             </motion.div>
 
+            {/* social icons  */}
             <div className='mt-10 flex gap-5 text-2xl md:text-3xl justify-center lg:justify-start'>
-              
+              {socials.map(({Icon, label, href}) => (
+                <motion.a href={href} target="_blank" key={label} aria-label={label} rel='noopener noreferrer' variants={glowVariants} initial="initial" whileHover="hover" whileTap="tap" className='text-gray-300 hover:text-white transition-colors duration-300'>
+                  <Icon />
+                </motion.a>
+              ))}
             </div>
+
           </div>
+        </div>
+
+        {/*right side - add image*/}
+        <div className='relative hidden lg:block'>
+
+          {/* Glow Effect */}
+          <div 
+          className='absolute top-0.5 -translate-y-0.5 pointer-events-none'
+          style={{
+            right: "10px", width: 'min(22vw, 410px)', height: "min(40vh, 760px)", borderRadius: "50%",
+            filter: "blur(38px)", opacity: 0.32,
+            background: "conic-gradient(from 0deg, #1cd8d2, #00bf8f, #302b63, #1cd8d2)"
+            
+          }}
+          />
+
+          <motion.img src={avatar} alt="Ashish Jha"
+          className='absolute top-0.5 -translate-y-1/2 object-contain select-none pointer-events-none'
+          style={{
+            right: "-30px", width: "min(45vw, 780px)", maxHeight: "90vh", top: "290px"
+          }}
+          initial={{ opacity: 0, y: 40, scale: 0.8 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+           />
         </div>
 
       </div>
