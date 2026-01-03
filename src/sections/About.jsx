@@ -11,7 +11,7 @@ const About = () => {
     {label: 'Focus', value: 'Scalable Web Apps with AI Features'},
   ]
 
-  const glows = [
+  const glows = [      // background glow effects classes for about section
     "-top-10 -left-10 w-[360px] h-[360px] opacity-20 blur-[120px]",
     "bottom-0 right-10 w-[420px] h-[360px] opacity-15 blur-[140px] delay-300",
     "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[220px] opacity-15 blur-[100px] delay-500",

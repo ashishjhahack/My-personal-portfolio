@@ -14,7 +14,7 @@ const useIsMobile = (query = '(max-width: 639px)') => {
   const [isMobile, setIsMobile] = React.useState(
     typeof window !== 'undefined' && window.matchMedia(query).matches   // window == undefined during SSR(means in nextJs). So, this code is for both SSR and CSR.
   );
-  useEffect(() => {
+  useEffect(() => {     // this useEffect will run only on client side
     if(typeof window === 'undefined') return; // for SSR
 
     const mql  = window.matchMedia(query);

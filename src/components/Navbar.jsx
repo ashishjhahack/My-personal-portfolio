@@ -6,13 +6,13 @@ import {FiMenu} from 'react-icons/fi'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [visible, setVisible] = useState(true);
-  const [forceVisible, setForceVisible] = useState(false);
+  const [visible, setVisible] = useState(true);       // controls navbar visibility
+  const [forceVisible, setForceVisible] = useState(false);     // to forcefully show navbar when home section is visible
 
-  const lastScrollY = useRef(0);
-  const timerId = useRef(null);
+  const lastScrollY = useRef(0);      // to store last scroll position
+  const timerId = useRef(null);       // to store timer id for hiding navbar after some time
 
-  useEffect(() => {
+  useEffect(() => {      // This useEffect handles the Intersection Observer to detect when home section is visible
     const homeSection = document.querySelector('home');
     const observer = new IntersectionObserver(
       (entries) => {
@@ -34,7 +34,7 @@ const Navbar = () => {
 
   }, []);
 
-  useEffect(() => {
+  useEffect(() => {       // This useEffect handles the scroll event to show/hide navbar when user scrolls
     const handleScroll = () => {
     if(forceVisible){
       setVisible(true);

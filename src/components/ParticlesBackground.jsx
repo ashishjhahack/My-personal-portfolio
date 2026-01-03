@@ -17,8 +17,8 @@ const ParticlesBackground = () => {
       constructor(){
         this.x = Math.random() * canvas.width;    // randomly place particles in x axis
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2+1;     // random size between 
-        this.color = colors[Math.floor(Math.random() * colors.length)];   // traverse color array
+        this.size = Math.random() * 2+1;     // random size between the particles
+        this.color = colors[Math.floor(Math.random() * colors.length)];   // traverse color array for different colors
         this.speedX = (Math.random() - 0.5) * 0.5;   // control particle speed in x
         this.speedY = (Math.random() - 0.5) * 0.5;
       

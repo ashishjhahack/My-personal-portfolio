@@ -6,7 +6,7 @@ const IntroAnimation = ({onFinish}) => {
   const greeting = useMemo(() => ["Hello", "Bonjour", "Hola", "Namaste", "Salaam"], [])
 
   const [index, setIndex] = React.useState(0);       // tracking which greeting to show
-  const [visible, setVisible] = React.useState(true);
+  const [visible, setVisible] = React.useState(true);   // to track visibility of the intro animation
 
   useEffect(() => {
     if(index < greeting.length - 1){

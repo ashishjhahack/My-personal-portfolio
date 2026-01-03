@@ -12,7 +12,7 @@ const socials = [
   { Icon: FaInstagram, label: 'Instagram', href: 'https://instagram.com/ashish.j5_04' }
 ]
 
-const glowVariants = {
+const glowVariants = {    // it is for social icons glow effect
   initial: {scale: 1, y:0, filter: "drop-shadow(0 0 0 rgba(0, 0, 0, 0))"},
   hover: {
     scale: 1.2, y:-3,
@@ -25,12 +25,14 @@ const glowVariants = {
 const Home = () => {
 
   // useMemo hook to memoize the roles array
+  // Here useMemo is used to avoid re-creating the roles array on every render of the component.
   const roles = useMemo(() => ["Full Stack Developer", "Web Developer", "Tech Enthusiast"], [])
-  const [index, setIndex] = useState(0)
-  const [subIndex, setSubIndex] = useState(0)
-  const [deleting, setDeleting] = useState(false);
 
-  useEffect(() => {
+  const [index, setIndex] = useState(0)     // to track current role index
+  const [subIndex, setSubIndex] = useState(0)    // to track current character index in the role
+  const [deleting, setDeleting] = useState(false);    // to track whether we are in deleting mode or adding mode
+
+  useEffect(() => {    // type writter effect
      const current = roles[index];     // Set the current role based on index
      const timeout = setTimeout(() => {
       if(!deleting && subIndex < current.length){        // if the word is not full completed means less than a complete current word
@@ -58,7 +60,7 @@ const Home = () => {
       {/* background animation  */}
       <div className='absolute inset-0'>
         {/*2 background effects*/}
-        <div
+        <div     // top left glow
          className='absolute -top-32 -left-32 
          w-[70vw] sm:w-[z-500vw] md:w-[40vw] 
          h-[70vw] sm:h-[50vw] md:h-[40vw] 
@@ -68,7 +70,8 @@ const Home = () => {
          opacity-30 sm:opacity-20 md:opacity-10 blur-[100px] 
          sm:blur-[130px] md:blur-[150px] 
          animate-pulse'></div>
-        <div className='absolute bottom-0 right-0 
+        <div     // bottom right glow
+         className='absolute bottom-0 right-0     
          w-[70vw] sm:w-[z-500vw] md:w-[40vw] 
          h-[70vw] sm:h-[50vw] md:h-[40vw] 
          max-w-500px max-h-500px 
