@@ -16,7 +16,7 @@ const OverlayMenu = ({isOpen, onClose}) => {
           </button>
 
           <ul className='space-y-6 text-center'>
-            {["Home", "About", "Skills", "Projects", "Experiments", "Testimonials",  "Contact"].map((item, index) => (
+            {["Home", "About", "Skills", "Projects", "Experiments", "Contact"].map((item, index) => (
               <motion.li key={item} initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} transition={{delay: 0.3 + index*0.1}}>
                 <a href={`#${item.toLowerCase()}`} onClick={onClose} className='text-4xl text-white font-semibold hover:text-pink-400 transition-colors duration-300'>{item}</a>
               </motion.li>

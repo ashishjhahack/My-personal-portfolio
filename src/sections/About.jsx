@@ -31,7 +31,7 @@ const About = () => {
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        viewPort={{ once: true, amount: 0.4 }}>        {/* means animation will run only once when 40% of the component is in view */}
+        viewport={{ once: true, amount: 0.4 }}>        {/* means animation will run only once when 40% of the component is in view */}
           <motion.div className='relative w-160px h-160px md:w-[200px] md:h-[200px] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-[#1cd8d2]/20 to-[#302b63]/20 border border-[#1cd8d2]/20'
           whileHover={{scale: 1.02}}
           transition={{ type: 'spring', stiffness: 200, damping: 10 }}>
@@ -52,7 +52,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                viewPort={{ once: true, amount: 0.6 }}>
+                viewport={{ once: true, amount: 0.6 }}>
                   <div className='text-sm text-gray-400'>{stat.label}</div>
                   <div className='font-semibold text-base'>{stat.value}</div>
                 </motion.div>
@@ -70,7 +70,7 @@ const About = () => {
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        viewPort={{ once: true, amount: 0.4 }}>
+        viewport={{ once: true, amount: 0.4 }}>
             <h3 className='text-2xl sm:text-3xl font-bold text-white mb-3'>
               About Me
             </h3>
