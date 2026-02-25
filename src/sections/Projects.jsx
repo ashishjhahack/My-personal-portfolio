@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo } from 'react'
-import img1 from '../assets/img1.JPG'
-import img2 from '../assets/img2.JPG'
-import img3 from '../assets/img3.JPG'
-import photo1 from '../assets/photo1.JPG'
-import photo2 from '../assets/photo2.PNG'
-import photo3 from '../assets/photo3.png'
+import img1 from '../assets/IMG_1.png'
+import img2 from '../assets/IMG_2.png'
+import img3 from '../assets/IMG_3.png'
+import photo1 from '../assets/Mobile_img1.jpeg'
+import photo2 from '../assets/Mobile_img2.png'
+import photo3 from '../assets/Mobile_img3.png'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useScroll, useMotionValueEvent } from 'framer-motion'
 
@@ -35,21 +35,21 @@ const Projects = () => {
 
   const projects = useMemo(() => [
     {
-      title: "nk studio",
-      link: "https://www.nk.studio/",
-      bgColor: "#0d4d3d",
+      title: "PPT Generator",
+      link: "https://ppt-generator-olive.vercel.app/",
+      bgColor: "#FF8C42",
       image: isMobile ? photo1 : img1,      // use mobile and desktop images accordingly
     },
     {
-      title: "Gamily",
-      link: "https://gamily.app/",
-      bgColor: "#3384d3",
+      title: "Ecommerce-AI",
+      link: "https://ecom-ai-frontend-sigma.vercel.app/",
+      bgColor: "#9E9E9E",
       image: isMobile ? photo2 : img2,
     },
     {
-      title: "Hungry Tiger",
-      link: "https://www.eathungrytiger.com/",
-      bgColor: "dc9317",
+      title: "Streamify",
+      link: "https://streamify-b29a.onrender.com/",
+      bgColor: "#0d4d3d",
       image: isMobile ? photo3 : img3
     }
   ], [isMobile]);     // re-run our array only when isMobile changes

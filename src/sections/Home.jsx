@@ -6,10 +6,10 @@ import avatar from '../assets/avator.png'
 
 
 const socials = [
-  { Icon: FaXTwitter, label: 'X', href: 'https://twitter.com/yourprofile' },
+  { Icon: FaXTwitter, label: 'X', href: 'https://x.com/ashish25090' },
   { Icon: FaLinkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/ashish-jha-41227234b' },
   { Icon: FaGithub, label: 'GitHub', href: 'https://github.com/ashishjhahack' },
-  { Icon: FaInstagram, label: 'Instagram', href: 'https://instagram.com/ashish.j5_04' }
+  { Icon: FaInstagram, label: 'Instagram', href: 'https://www.instagram.com/ashish.j5__04?utm_source=qr&igsh=MTAzNHl5aGJ2NHAyaw==' }
 ]
 
 const glowVariants = {    // it is for social icons glow effect
