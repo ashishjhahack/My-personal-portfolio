@@ -20,7 +20,6 @@ https://my-personal-portfolio-flame-eight.vercel.app/
 * Skills and technologies section
 * Contact form
 * Social media links
-* Dark/Light mode (optional)
 * Mobile-friendly design
 
 ---
